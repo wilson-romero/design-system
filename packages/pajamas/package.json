@@ -18,6 +18,7 @@
   "license": "MIT",
   "keywords": ["design-system", "pajamas", "gitlab", "react", "tailwindcss", "components"],
   "publishConfig": {
+    "registry": "https://npm.pkg.github.com",
     "access": "public"
   },
   "files": [
