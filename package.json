@@ -1,0 +1,23 @@
+{
+  "name": "tigo-design-system",
+  "private": true,
+  "scripts": {
+    "build": "pnpm --filter @wilson-romero/tigo build && pnpm --filter @wilson-romero/carbon build && pnpm --filter @wilson-romero/polaris build && pnpm --filter @wilson-romero/base build && pnpm --filter @wilson-romero/lightning build && pnpm --filter @wilson-romero/pajamas build && pnpm --filter @wilson-romero/primer build && pnpm --filter @wilson-romero/spectrum build && pnpm --filter @wilson-romero/antd build",
+    "build:tigo": "pnpm --filter @wilson-romero/tigo build",
+    "build:carbon": "pnpm --filter @wilson-romero/carbon build",
+    "build:polaris": "pnpm --filter @wilson-romero/polaris build",
+    "build:base": "pnpm --filter @wilson-romero/base build",
+    "build:lightning": "pnpm --filter @wilson-romero/lightning build",
+    "build:pajamas": "pnpm --filter @wilson-romero/pajamas build",
+    "build:primer": "pnpm --filter @wilson-romero/primer build",
+    "build:spectrum": "pnpm --filter @wilson-romero/spectrum build",
+    "build:antd": "pnpm --filter @wilson-romero/antd build",
+    "publish:all": "pnpm -r --filter './packages/**' publish --access public --no-git-checks",
+    "dev": "pnpm --filter example dev",
+    "type-check": "pnpm --filter @wilson-romero/tigo type-check && pnpm --filter @wilson-romero/carbon type-check && pnpm --filter @wilson-romero/polaris type-check",
+    "lint": "pnpm --filter @wilson-romero/tigo lint"
+  },
+  "devDependencies": {
+    "typescript": "^5"
+  }
+}

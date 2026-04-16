@@ -1,0 +1,38 @@
+/* Cronos Pro — TIGO brand typeface */
+/* Source: https://www.onlinewebfonts.com/package/Cronos_Pro */
+
+@font-face {
+  font-family: "Cronos Pro";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("https://db.onlinewebfonts.com/t/5369e8dd38b99bce9a0d21d1aa582c82.woff2") format("woff2"),
+       url("https://db.onlinewebfonts.com/t/5369e8dd38b99bce9a0d21d1aa582c82.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Cronos Pro";
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url("https://db.onlinewebfonts.com/t/4953067701af02c9513ea84616b61570.woff2") format("woff2"),
+       url("https://db.onlinewebfonts.com/t/4953067701af02c9513ea84616b61570.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Cronos Pro";
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("https://db.onlinewebfonts.com/t/1d62ff109cfd5ced8815976cfc04d558.woff2") format("woff2"),
+       url("https://db.onlinewebfonts.com/t/1d62ff109cfd5ced8815976cfc04d558.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Cronos Pro";
+  font-style: italic;
+  font-weight: 700;
+  font-display: swap;
+  src: url("https://db.onlinewebfonts.com/t/084794d4ad87c2dbbb805f4157718821.woff2") format("woff2"),
+       url("https://db.onlinewebfonts.com/t/084794d4ad87c2dbbb805f4157718821.woff") format("woff");
+}

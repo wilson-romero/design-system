@@ -1,0 +1,167 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:is(.dark *));
+
+/**
+ * Lightning Design System — Salesforce
+ *
+ * Token reference: lightningdesignsystem.com/design-tokens
+ *
+ * Core palette:
+ *   Brand Blue     #0176D3  — Interactive / Primary (colorActionActive)
+ *   Navy           #032D60  — Text primary (colorTextDefault)
+ *   White          #FFFFFF  — Background
+ *   Destructive    #EA001E  — Error (colorTextError)
+ *   Success        #2E844A  — Success (colorTextSuccess)
+ *   Warning        #DD7A01  — Warning (colorTextWarning)
+ *
+ * Color format: HSL
+ *   Brand Blue → hsl(207 99% 42%)
+ *   Navy       → hsl(213 93% 20%)
+ *   Red        → hsl(352 100% 46%)
+ *   Green      → hsl(138 47% 35%)
+ *   Orange     → hsl(33 98% 43%)
+ *
+ * Key principle: subtle rounding (2px/4px), blue-navy color system.
+ */
+
+@layer base {
+  :root {
+    /* Background & Foreground */
+    --background: 0 0% 100%;           /* White */
+    --foreground: 213 93% 20%;         /* Navy #032D60 */
+
+    /* Primary — Brand Blue #0176D3 */
+    --primary: 207 99% 42%;
+    --primary-foreground: 0 0% 100%;
+    --primary-hover: 207 99% 34%;      /* Darker blue */
+
+    /* Secondary — Light Blue #F3F2F2 */
+    --secondary: 0 0% 95%;
+    --secondary-foreground: 213 93% 20%;
+    --secondary-hover: 0 0% 88%;
+
+    /* Muted — Neutral gray */
+    --muted: 0 0% 93%;
+    --muted-foreground: 0 0% 43%;
+
+    /* Accent — Light blue tint */
+    --accent: 207 100% 93%;
+    --accent-foreground: 207 99% 30%;
+
+    /* Destructive — Red #EA001E */
+    --destructive: 352 100% 46%;
+    --destructive-foreground: 0 0% 100%;
+
+    /* Card */
+    --card: 0 0% 100%;
+    --card-foreground: 213 93% 20%;
+
+    /* Popover */
+    --popover: 0 0% 100%;
+    --popover-foreground: 213 93% 20%;
+
+    /* Borders — #DDDBDA */
+    --border: 15 3% 86%;
+    --input: 15 3% 86%;
+
+    /* Focus Ring — Brand Blue */
+    --ring: 207 99% 42%;
+
+    /* Border Radius — subtle (4px) */
+    --radius: 0.25rem;
+
+    /* State colors */
+    --success: 138 47% 35%;            /* Green #2E844A */
+    --success-foreground: 0 0% 100%;
+    --warning: 33 98% 43%;             /* Orange #DD7A01 */
+    --warning-foreground: 0 0% 100%;
+    --info: 207 99% 42%;
+    --info-foreground: 0 0% 100%;
+
+    /* Chart colors — Salesforce palette */
+    --chart-1: 207 99% 42%;            /* Blue */
+    --chart-2: 213 93% 20%;            /* Navy */
+    --chart-3: 138 47% 35%;            /* Green */
+    --chart-4: 352 100% 46%;           /* Red */
+    --chart-5: 33 98% 43%;             /* Orange */
+
+    /* Sidebar */
+    --sidebar: 213 93% 15%;            /* Dark navy sidebar */
+    --sidebar-foreground: 0 0% 100%;
+    --sidebar-primary: 207 99% 60%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 213 50% 25%;
+    --sidebar-accent-foreground: 0 0% 100%;
+    --sidebar-border: 213 50% 30%;
+    --sidebar-ring: 207 99% 60%;
+  }
+
+  .dark {
+    --background: 213 93% 12%;
+    --foreground: 207 100% 90%;
+
+    --primary: 207 100% 65%;
+    --primary-foreground: 213 93% 10%;
+    --primary-hover: 207 100% 72%;
+
+    --secondary: 213 50% 20%;
+    --secondary-foreground: 207 100% 90%;
+    --secondary-hover: 213 50% 28%;
+
+    --muted: 213 50% 18%;
+    --muted-foreground: 207 30% 60%;
+
+    --accent: 207 60% 22%;
+    --accent-foreground: 207 100% 75%;
+
+    --destructive: 352 100% 60%;
+    --destructive-foreground: 0 0% 10%;
+
+    --card: 213 60% 15%;
+    --card-foreground: 207 100% 90%;
+
+    --popover: 213 60% 15%;
+    --popover-foreground: 207 100% 90%;
+
+    --border: 213 40% 25%;
+    --input: 213 40% 25%;
+
+    --ring: 207 100% 65%;
+    --radius: 0.25rem;
+
+    --success: 138 60% 50%;
+    --success-foreground: 0 0% 10%;
+    --warning: 33 100% 60%;
+    --warning-foreground: 0 0% 10%;
+    --info: 207 100% 65%;
+    --info-foreground: 0 0% 10%;
+
+    --chart-1: 207 100% 65%;
+    --chart-2: 207 100% 80%;
+    --chart-3: 138 60% 50%;
+    --chart-4: 352 100% 60%;
+    --chart-5: 33 100% 60%;
+
+    --sidebar: 213 93% 8%;
+    --sidebar-foreground: 207 100% 90%;
+    --sidebar-primary: 207 100% 65%;
+    --sidebar-primary-foreground: 0 0% 10%;
+    --sidebar-accent: 213 50% 18%;
+    --sidebar-accent-foreground: 207 100% 90%;
+    --sidebar-border: 213 40% 20%;
+    --sidebar-ring: 207 100% 65%;
+  }
+}
+
+@layer base {
+  * {
+    border-color: hsl(var(--border));
+  }
+  body {
+    background-color: hsl(var(--background));
+    color: hsl(var(--foreground));
+    font-family: "Salesforce Sans", system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+}

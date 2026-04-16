@@ -1,0 +1,185 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:is(.dark *));
+
+/**
+ * Carbon Design System — IBM
+ *
+ * Token reference: carbondesignsystem.com/guidelines/color/tokens
+ *
+ * Core palette:
+ *   Blue 60     #0f62fe  — Interactive / Primary
+ *   Gray 100    #161616  — Text primary (high contrast)
+ *   Gray 10     #f4f4f4  — Background layer 01
+ *   Red 60      #da1e28  — Error / Danger
+ *   Green 60    #198038  — Success
+ *   Yellow 30   #f1c21b  — Warning
+ *
+ * Color format: HSL
+ *   Blue 60  → hsl(219 98% 52%)
+ *   Gray 100 → hsl(0 0% 8%)
+ *   Gray 10  → hsl(0 0% 96%)
+ *   Red 60   → hsl(356 78% 50%)
+ *   Green 60 → hsl(142 68% 33%)
+ *   Yellow 30 → hsl(44 88% 54%)
+ *
+ * Key principle: elevation via COLOR not shadows.
+ * bg-layer-01 → bg-layer-02 → bg-layer-03 using gray steps.
+ */
+
+@layer base {
+  :root {
+    /* Background & Foreground */
+    --background: 0 0% 100%;         /* White 0 */
+    --foreground: 0 0% 8%;           /* Gray 100 */
+
+    /* Primary — IBM Blue 60 #0f62fe */
+    --primary: 219 98% 52%;
+    --primary-foreground: 0 0% 100%;
+    --primary-hover: 219 98% 44%;    /* Blue 70 #0043ce */
+
+    /* Secondary — Gray 10 surface */
+    --secondary: 0 0% 96%;
+    --secondary-foreground: 0 0% 8%;
+    --secondary-hover: 0 0% 90%;
+
+    /* Muted — Gray 20 */
+    --muted: 0 0% 89%;
+    --muted-foreground: 0 0% 35%;    /* Gray 60 */
+
+    /* Accent — Blue 10 tint */
+    --accent: 219 100% 96%;
+    --accent-foreground: 219 98% 30%;
+
+    /* Destructive — Red 60 #da1e28 */
+    --destructive: 356 78% 50%;
+    --destructive-foreground: 0 0% 100%;
+
+    /* Card — Gray 10 (layer-01) */
+    --card: 0 0% 96%;
+    --card-foreground: 0 0% 8%;
+
+    /* Popover — White 0 */
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 8%;
+
+    /* Borders — Gray 20 #e0e0e0 */
+    --border: 0 0% 88%;
+    --input: 0 0% 88%;
+
+    /* Focus Ring — Blue 60 */
+    --ring: 219 98% 52%;
+
+    /* Border Radius — Carbon is SHARP (no rounding) */
+    --radius: 0rem;
+
+    /* State colors */
+    --success: 142 68% 33%;          /* Green 60 #198038 */
+    --success-foreground: 0 0% 100%;
+    --warning: 44 88% 54%;           /* Yellow 30 #f1c21b */
+    --warning-foreground: 0 0% 8%;
+    --info: 219 98% 52%;             /* Blue 60 */
+    --info-foreground: 0 0% 100%;
+
+    /* Chart colors — IBM palette */
+    --chart-1: 219 98% 52%;          /* Blue 60 */
+    --chart-2: 293 62% 42%;          /* Purple 70 */
+    --chart-3: 142 68% 33%;          /* Green 60 */
+    --chart-4: 356 78% 50%;          /* Red 60 */
+    --chart-5: 44 88% 54%;           /* Yellow 30 */
+
+    /* Sidebar — Gray 10 layer */
+    --sidebar: 0 0% 96%;
+    --sidebar-foreground: 0 0% 8%;
+    --sidebar-primary: 219 98% 52%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 219 100% 96%;
+    --sidebar-accent-foreground: 219 98% 30%;
+    --sidebar-border: 0 0% 88%;
+    --sidebar-ring: 219 98% 52%;
+  }
+
+  .dark {
+    /* Background & Foreground — Carbon dark uses Gray 90/#262626 as base */
+    --background: 0 0% 15%;          /* Gray 90 #262626 */
+    --foreground: 0 0% 96%;          /* Gray 10 #f4f4f4 */
+
+    /* Primary — Blue 40 #78a9ff (lighter for dark bg) */
+    --primary: 219 100% 74%;
+    --primary-foreground: 0 0% 8%;
+    --primary-hover: 219 100% 82%;
+
+    /* Secondary */
+    --secondary: 0 0% 22%;           /* Gray 80 #393939 */
+    --secondary-foreground: 0 0% 96%;
+    --secondary-hover: 0 0% 28%;
+
+    /* Muted */
+    --muted: 0 0% 22%;
+    --muted-foreground: 0 0% 57%;    /* Gray 50 */
+
+    /* Accent */
+    --accent: 219 50% 25%;
+    --accent-foreground: 219 100% 74%;
+
+    /* Destructive — Red 40 #ff8389 */
+    --destructive: 356 100% 76%;
+    --destructive-foreground: 0 0% 8%;
+
+    /* Card — Gray 80 */
+    --card: 0 0% 22%;
+    --card-foreground: 0 0% 96%;
+
+    /* Popover */
+    --popover: 0 0% 22%;
+    --popover-foreground: 0 0% 96%;
+
+    /* Borders — Gray 70 #525252 */
+    --border: 0 0% 32%;
+    --input: 0 0% 32%;
+
+    --ring: 219 100% 74%;
+    --radius: 0rem;
+
+    /* State colors dark */
+    --success: 142 55% 60%;          /* Green 40 #42be65 */
+    --success-foreground: 0 0% 8%;
+    --warning: 44 100% 74%;          /* Yellow 20 #fdd13a */
+    --warning-foreground: 0 0% 8%;
+    --info: 219 100% 74%;
+    --info-foreground: 0 0% 8%;
+
+    --chart-1: 219 100% 74%;
+    --chart-2: 264 80% 72%;
+    --chart-3: 142 55% 60%;
+    --chart-4: 356 100% 76%;
+    --chart-5: 44 100% 74%;
+
+    --sidebar: 0 0% 10%;
+    --sidebar-foreground: 0 0% 96%;
+    --sidebar-primary: 219 100% 74%;
+    --sidebar-primary-foreground: 0 0% 8%;
+    --sidebar-accent: 219 50% 25%;
+    --sidebar-accent-foreground: 219 100% 74%;
+    --sidebar-border: 0 0% 32%;
+    --sidebar-ring: 219 100% 74%;
+  }
+}
+
+@layer base {
+  * {
+    border-color: hsl(var(--border));
+  }
+  body {
+    background-color: hsl(var(--background));
+    color: hsl(var(--foreground));
+    font-family: "IBM Plex Sans", system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* Carbon uses pixel-perfect sharp focus rings */
+  :focus-visible {
+    outline: 2px solid hsl(var(--ring));
+    outline-offset: 0px;
+  }
+}

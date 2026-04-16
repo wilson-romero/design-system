@@ -1,0 +1,312 @@
+@import "tailwindcss";
+@import "./fonts.css";
+@import "./typography.css";
+@import "./colors.css";
+@import "./shadows.css";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+/**
+ * TIGO Brand Theme
+ * Based on Manual de Normas de Identidad Visual TIGO
+ *
+ * Brand Colors:
+ *   Azul TIGO    #5060BA  (Pantone 2726) — Principal
+ *   Amarillo TIGO #FFD700 (Pantone 123)  — Secundario
+ *   Rojo TIGO    #E61950  (Pantone 199)  — Terciario
+ *   Verde TIGO   #41C800  (Pantone 368)  — Terciario
+ *
+ * Color format: HSL
+ *   Azul TIGO    → hsl(231 43% 52%)
+ *   Amarillo TIGO → hsl(51 100% 50%)
+ *   Rojo TIGO    → hsl(344 80% 50%)
+ *   Verde TIGO   → hsl(101 100% 39%)
+ */
+
+@layer base {
+  :root {
+    /* Background & Foreground */
+    --background: 0 0% 100%;
+    --foreground: 231 43% 15%;
+
+    /* Primary — Azul TIGO #5060BA */
+    --primary: 231 43% 52%;
+    --primary-foreground: 0 0% 100%;
+    --primary-hover: 231 43% 44%;
+
+    /* Secondary — Amarillo TIGO #FFD700 */
+    --secondary: 51 100% 50%;
+    --secondary-foreground: 231 43% 15%;
+    --secondary-hover: 51 100% 42%;
+
+    /* Muted */
+    --muted: 231 20% 95%;
+    --muted-foreground: 231 10% 45%;
+
+    /* Accent — light blue tint */
+    --accent: 231 40% 92%;
+    --accent-foreground: 231 43% 25%;
+
+    /* Destructive — Rojo TIGO #E61950 */
+    --destructive: 344 80% 50%;
+    --destructive-foreground: 0 0% 100%;
+
+    /* Card */
+    --card: 0 0% 100%;
+    --card-foreground: 231 43% 15%;
+
+    /* Popover */
+    --popover: 0 0% 100%;
+    --popover-foreground: 231 43% 15%;
+
+    /* Borders & Inputs */
+    --border: 231 20% 86%;
+    --input: 231 20% 86%;
+
+    /* Focus Ring — Azul TIGO */
+    --ring: 231 43% 52%;
+
+    /* Border Radius */
+    --radius: 0.5rem;
+
+    /* State colors */
+    /* Success — Verde TIGO #41C800 */
+    --success: 101 100% 39%;
+    --success-foreground: 0 0% 100%;
+    /* Warning — Amarillo TIGO */
+    --warning: 51 100% 50%;
+    --warning-foreground: 231 43% 15%;
+    /* Info */
+    --info: 217 91% 60%;
+    --info-foreground: 0 0% 100%;
+
+    /* Chart colors — TIGO palette */
+    --chart-1: 231 43% 52%;
+    --chart-2: 51 100% 50%;
+    --chart-3: 101 100% 39%;
+    --chart-4: 344 80% 50%;
+    --chart-5: 217 91% 60%;
+
+    /* Sidebar */
+    --sidebar: 231 43% 97%;
+    --sidebar-foreground: 231 43% 15%;
+    --sidebar-primary: 231 43% 52%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 231 40% 92%;
+    --sidebar-accent-foreground: 231 43% 25%;
+    --sidebar-border: 231 20% 86%;
+    --sidebar-ring: 231 43% 52%;
+  }
+
+  .dark {
+    /* Background & Foreground */
+    --background: 231 43% 10%;
+    --foreground: 231 20% 95%;
+
+    /* Primary — Azul TIGO (slightly lighter in dark) */
+    --primary: 231 43% 62%;
+    --primary-foreground: 0 0% 100%;
+    --primary-hover: 231 43% 52%;
+
+    /* Secondary — Amarillo TIGO */
+    --secondary: 51 100% 50%;
+    --secondary-foreground: 231 43% 10%;
+    --secondary-hover: 51 100% 42%;
+
+    /* Muted */
+    --muted: 231 30% 18%;
+    --muted-foreground: 231 15% 60%;
+
+    /* Accent */
+    --accent: 231 30% 22%;
+    --accent-foreground: 231 20% 95%;
+
+    /* Destructive */
+    --destructive: 344 70% 45%;
+    --destructive-foreground: 0 0% 100%;
+
+    /* Card */
+    --card: 231 40% 14%;
+    --card-foreground: 231 20% 95%;
+
+    /* Popover */
+    --popover: 231 40% 14%;
+    --popover-foreground: 231 20% 95%;
+
+    /* Borders & Inputs */
+    --border: 231 30% 22%;
+    --input: 231 30% 22%;
+
+    /* Focus Ring */
+    --ring: 231 43% 62%;
+
+    /* State colors */
+    --success: 101 100% 35%;
+    --success-foreground: 0 0% 100%;
+    --warning: 51 100% 50%;
+    --warning-foreground: 231 43% 10%;
+    --info: 217 91% 50%;
+    --info-foreground: 0 0% 100%;
+
+    /* Chart colors */
+    --chart-1: 231 43% 62%;
+    --chart-2: 51 100% 50%;
+    --chart-3: 101 100% 35%;
+    --chart-4: 344 70% 45%;
+    --chart-5: 217 91% 60%;
+
+    /* Sidebar */
+    --sidebar: 231 43% 12%;
+    --sidebar-foreground: 231 20% 95%;
+    --sidebar-primary: 231 43% 62%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 231 30% 20%;
+    --sidebar-accent-foreground: 231 20% 95%;
+    --sidebar-border: 231 30% 22%;
+    --sidebar-ring: 231 43% 62%;
+  }
+}
+
+/**
+ * Tailwind CSS v4 @theme inline
+ * Exposes CSS variables as Tailwind utilities
+ */
+@theme inline {
+  /* Typography */
+  --font-sans: "Cronos Pro", system-ui, sans-serif;
+  --font-display: "Cocon", "Cronos Pro", sans-serif;
+
+  /* Core Colors */
+  --color-background: hsl(var(--background));
+  --color-foreground: hsl(var(--foreground));
+  --color-primary: hsl(var(--primary));
+  --color-primary-foreground: hsl(var(--primary-foreground));
+  --color-primary-hover: hsl(var(--primary-hover));
+  --color-secondary: hsl(var(--secondary));
+  --color-secondary-foreground: hsl(var(--secondary-foreground));
+  --color-secondary-hover: hsl(var(--secondary-hover));
+  --color-muted: hsl(var(--muted));
+  --color-muted-foreground: hsl(var(--muted-foreground));
+  --color-accent: hsl(var(--accent));
+  --color-accent-foreground: hsl(var(--accent-foreground));
+  --color-destructive: hsl(var(--destructive));
+  --color-destructive-foreground: hsl(var(--destructive-foreground));
+  --color-card: hsl(var(--card));
+  --color-card-foreground: hsl(var(--card-foreground));
+  --color-popover: hsl(var(--popover));
+  --color-popover-foreground: hsl(var(--popover-foreground));
+  --color-border: hsl(var(--border));
+  --color-input: hsl(var(--input));
+  --color-ring: hsl(var(--ring));
+
+  /* TIGO Brand Palette — direct access */
+  --color-tigo-blue: #5060BA;
+  --color-tigo-yellow: #FFD700;
+  --color-tigo-red: #E61950;
+  --color-tigo-green: #41C800;
+
+  /* State Colors */
+  --color-success: hsl(var(--success));
+  --color-success-foreground: hsl(var(--success-foreground));
+  --color-warning: hsl(var(--warning));
+  --color-warning-foreground: hsl(var(--warning-foreground));
+  --color-info: hsl(var(--info));
+  --color-info-foreground: hsl(var(--info-foreground));
+
+  /* Chart Colors */
+  --color-chart-1: hsl(var(--chart-1));
+  --color-chart-2: hsl(var(--chart-2));
+  --color-chart-3: hsl(var(--chart-3));
+  --color-chart-4: hsl(var(--chart-4));
+  --color-chart-5: hsl(var(--chart-5));
+
+  /* Border Radius */
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+
+  /* Sidebar */
+  --color-sidebar: hsl(var(--sidebar));
+  --color-sidebar-foreground: hsl(var(--sidebar-foreground));
+  --color-sidebar-primary: hsl(var(--sidebar-primary));
+  --color-sidebar-primary-foreground: hsl(var(--sidebar-primary-foreground));
+  --color-sidebar-accent: hsl(var(--sidebar-accent));
+  --color-sidebar-accent-foreground: hsl(var(--sidebar-accent-foreground));
+  --color-sidebar-border: hsl(var(--sidebar-border));
+  --color-sidebar-ring: hsl(var(--sidebar-ring));
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-family: "Cronos Pro", system-ui, sans-serif;
+  }
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+::-webkit-scrollbar-track {
+  background: hsl(var(--muted));
+}
+::-webkit-scrollbar-thumb {
+  background: hsl(var(--muted-foreground) / 0.3);
+  border-radius: 5px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: hsl(var(--muted-foreground) / 0.5);
+}
+
+/* Radix UI Portal dark mode inheritance */
+:is(.dark, html.dark) [data-radix-popper-content-wrapper],
+:is(.dark, html.dark) [data-radix-portal] {
+  --popover: 231 40% 14%;
+  --popover-foreground: 231 20% 95%;
+  --card: 231 40% 14%;
+  --card-foreground: 231 20% 95%;
+}
+
+[role="menu"] {
+  background-color: hsl(var(--popover)) !important;
+  color: hsl(var(--popover-foreground));
+}
+
+[data-slot="sheet-overlay"] {
+  background-color: rgba(0, 0, 0, 0.5) !important;
+}
+
+[data-slot="sheet-content"] {
+  background-color: hsl(var(--background)) !important;
+  color: hsl(var(--foreground));
+}
+
+:is(.dark, html.dark) [data-slot="sheet-content"] {
+  background-color: hsl(231 43% 10%) !important;
+  color: hsl(231 20% 95%);
+}
+
+:is(.dark, html.dark) [role="menu"],
+:is(.dark, html.dark) [data-slot="dropdown-menu-content"] {
+  background-color: hsl(231 40% 14%) !important;
+  color: hsl(231 20% 95%);
+}
+
+@utility no-scrollbar {
+  &::-webkit-scrollbar {
+    display: none;
+  }
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}

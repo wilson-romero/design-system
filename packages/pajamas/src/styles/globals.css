@@ -1,0 +1,168 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:is(.dark *));
+
+/**
+ * Pajamas Design System — GitLab
+ *
+ * Token reference: design.gitlab.com/product-foundations/color
+ *
+ * Core palette:
+ *   Purple         #6B4FBB  — UI theme / primary
+ *   Orange         #FC6D26  — Brand accent
+ *   Blue           #1F75CB  — Action blue (CTA)
+ *   Foreground     #303030  — Text primary
+ *   Destructive    #DD2B0E  — Error / danger
+ *   Success        #108548  — Success
+ *   Warning        #A87D00  — Warning
+ *
+ * Color format: HSL
+ *   Purple  → hsl(256 43% 52%)
+ *   Orange  → hsl(22 97% 57%)
+ *   Red     → hsl(8 88% 46%)
+ *   Green   → hsl(149 78% 29%)
+ *   Yellow  → hsl(40 100% 33%)
+ *
+ * Key principle: open source, community collaboration, issue-tracker-first.
+ */
+
+@layer base {
+  :root {
+    /* Background & Foreground */
+    --background: 0 0% 100%;
+    --foreground: 0 0% 19%;            /* #303030 */
+
+    /* Primary — GitLab purple #6B4FBB */
+    --primary: 256 43% 52%;
+    --primary-foreground: 0 0% 100%;
+    --primary-hover: 256 43% 44%;
+
+    /* Secondary — Light surface #EBEBEF */
+    --secondary: 240 11% 93%;
+    --secondary-foreground: 0 0% 19%;
+    --secondary-hover: 240 10% 86%;
+
+    /* Muted */
+    --muted: 240 10% 95%;
+    --muted-foreground: 0 0% 45%;
+
+    /* Accent — Orange tint */
+    --accent: 22 100% 94%;
+    --accent-foreground: 22 97% 40%;
+
+    /* Destructive — Red #DD2B0E */
+    --destructive: 8 88% 46%;
+    --destructive-foreground: 0 0% 100%;
+
+    /* Card */
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 19%;
+
+    /* Popover */
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 19%;
+
+    /* Borders — #DBDBDB */
+    --border: 0 0% 86%;
+    --input: 0 0% 86%;
+
+    /* Focus Ring — Purple */
+    --ring: 256 43% 52%;
+
+    /* Border Radius — 4px */
+    --radius: 0.25rem;
+
+    /* State colors */
+    --success: 149 78% 29%;            /* Green #108548 */
+    --success-foreground: 0 0% 100%;
+    --warning: 40 100% 33%;            /* Yellow #A87D00 */
+    --warning-foreground: 0 0% 100%;
+    --info: 256 43% 52%;
+    --info-foreground: 0 0% 100%;
+
+    /* Chart colors — GitLab palette */
+    --chart-1: 256 43% 52%;            /* Purple */
+    --chart-2: 22 97% 57%;             /* Orange */
+    --chart-3: 149 78% 29%;            /* Green */
+    --chart-4: 8 88% 46%;              /* Red */
+    --chart-5: 40 100% 33%;            /* Yellow */
+
+    /* Sidebar — dark purple */
+    --sidebar: 256 43% 20%;
+    --sidebar-foreground: 0 0% 95%;
+    --sidebar-primary: 256 70% 75%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 256 40% 30%;
+    --sidebar-accent-foreground: 0 0% 95%;
+    --sidebar-border: 256 30% 30%;
+    --sidebar-ring: 256 70% 75%;
+  }
+
+  .dark {
+    --background: 0 0% 10%;
+    --foreground: 240 10% 90%;
+
+    --primary: 256 70% 68%;
+    --primary-foreground: 0 0% 10%;
+    --primary-hover: 256 70% 75%;
+
+    --secondary: 240 10% 18%;
+    --secondary-foreground: 240 10% 90%;
+    --secondary-hover: 240 10% 25%;
+
+    --muted: 240 10% 16%;
+    --muted-foreground: 240 5% 55%;
+
+    --accent: 22 60% 20%;
+    --accent-foreground: 22 97% 70%;
+
+    --destructive: 8 100% 60%;
+    --destructive-foreground: 0 0% 10%;
+
+    --card: 240 10% 14%;
+    --card-foreground: 240 10% 90%;
+
+    --popover: 240 10% 14%;
+    --popover-foreground: 240 10% 90%;
+
+    --border: 240 10% 22%;
+    --input: 240 10% 22%;
+
+    --ring: 256 70% 68%;
+    --radius: 0.25rem;
+
+    --success: 149 70% 50%;
+    --success-foreground: 0 0% 10%;
+    --warning: 40 100% 55%;
+    --warning-foreground: 0 0% 10%;
+    --info: 256 70% 68%;
+    --info-foreground: 0 0% 10%;
+
+    --chart-1: 256 70% 68%;
+    --chart-2: 22 97% 65%;
+    --chart-3: 149 70% 50%;
+    --chart-4: 8 100% 60%;
+    --chart-5: 40 100% 55%;
+
+    --sidebar: 256 43% 8%;
+    --sidebar-foreground: 240 10% 90%;
+    --sidebar-primary: 256 70% 68%;
+    --sidebar-primary-foreground: 0 0% 10%;
+    --sidebar-accent: 256 40% 18%;
+    --sidebar-accent-foreground: 240 10% 90%;
+    --sidebar-border: 256 30% 18%;
+    --sidebar-ring: 256 70% 68%;
+  }
+}
+
+@layer base {
+  * {
+    border-color: hsl(var(--border));
+  }
+  body {
+    background-color: hsl(var(--background));
+    color: hsl(var(--foreground));
+    font-family: "GitLab Sans", system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+}

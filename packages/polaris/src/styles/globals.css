@@ -1,0 +1,186 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:is(.dark *));
+
+/**
+ * Polaris Design System — Shopify
+ *
+ * Token reference: polaris.shopify.com/tokens/color
+ *
+ * Core palette:
+ *   Green       #008060  — Primary interactive (brand)
+ *   Ink         #202223  — Text primary
+ *   Sky         #f6f6f7  — Surface default
+ *   Red         #d72c0d  — Critical
+ *   Yellow      #ffc453  — Warning
+ *   Teal        #47c1bf  — Highlight
+ *
+ * Color format: HSL
+ *   Green    → hsl(162 100% 25%)
+ *   Ink      → hsl(195 6% 13%)
+ *   Sky      → hsl(240 3% 97%)
+ *   Red      → hsl(10 95% 45%)
+ *   Yellow   → hsl(40 100% 66%)
+ *   Teal     → hsl(179 50% 52%)
+ *
+ * Key principle: tokens allow white-label without breaking interaction patterns.
+ * Components use semantic token names, not raw color values.
+ */
+
+@layer base {
+  :root {
+    /* Background & Foreground */
+    --background: 0 0% 100%;         /* Surface base */
+    --foreground: 195 6% 13%;        /* Ink #202223 */
+
+    /* Primary — Shopify Green #008060 */
+    --primary: 162 100% 25%;
+    --primary-foreground: 0 0% 100%;
+    --primary-hover: 162 100% 20%;   /* Green dark */
+
+    /* Secondary — Sky #f6f6f7 */
+    --secondary: 240 3% 97%;
+    --secondary-foreground: 195 6% 13%;
+    --secondary-hover: 240 5% 92%;
+
+    /* Muted */
+    --muted: 240 3% 94%;
+    --muted-foreground: 240 4% 46%; /* Subdued text */
+
+    /* Accent — Teal tint */
+    --accent: 179 40% 92%;
+    --accent-foreground: 179 50% 30%;
+
+    /* Destructive — Critical Red #d72c0d */
+    --destructive: 10 95% 45%;
+    --destructive-foreground: 0 0% 100%;
+
+    /* Card — Sky surface */
+    --card: 240 3% 97%;
+    --card-foreground: 195 6% 13%;
+
+    /* Popover — White */
+    --popover: 0 0% 100%;
+    --popover-foreground: 195 6% 13%;
+
+    /* Borders — #e1e3e5 */
+    --border: 210 5% 88%;
+    --input: 210 5% 88%;
+
+    /* Focus Ring — Green */
+    --ring: 162 100% 25%;
+
+    /* Border Radius — Polaris moderate rounding */
+    --radius: 0.5rem;
+
+    /* State colors */
+    --success: 162 100% 25%;         /* Green #008060 */
+    --success-foreground: 0 0% 100%;
+    --warning: 40 100% 66%;          /* Yellow #ffc453 */
+    --warning-foreground: 195 6% 13%;
+    --info: 215 100% 50%;
+    --info-foreground: 0 0% 100%;
+
+    /* Chart colors — Polaris palette */
+    --chart-1: 162 100% 25%;         /* Green */
+    --chart-2: 227 47% 57%;          /* Purple #5c6ac4 */
+    --chart-3: 179 50% 52%;          /* Teal #47c1bf */
+    --chart-4: 10 95% 45%;           /* Red */
+    --chart-5: 40 100% 66%;          /* Yellow */
+
+    /* Sidebar — Sky surface */
+    --sidebar: 240 3% 97%;
+    --sidebar-foreground: 195 6% 13%;
+    --sidebar-primary: 162 100% 25%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 179 40% 92%;
+    --sidebar-accent-foreground: 179 50% 30%;
+    --sidebar-border: 210 5% 88%;
+    --sidebar-ring: 162 100% 25%;
+  }
+
+  .dark {
+    /* Background & Foreground — Polaris dark uses #1a1a1a */
+    --background: 0 0% 10%;
+    --foreground: 240 3% 97%;        /* Sky #f6f6f7 */
+
+    /* Primary — Green 300 lighter for dark mode */
+    --primary: 162 68% 44%;          /* #26a37e */
+    --primary-foreground: 0 0% 100%;
+    --primary-hover: 162 68% 52%;
+
+    /* Secondary */
+    --secondary: 0 0% 16%;
+    --secondary-foreground: 240 3% 97%;
+    --secondary-hover: 0 0% 22%;
+
+    /* Muted */
+    --muted: 0 0% 20%;
+    --muted-foreground: 0 0% 55%;
+
+    /* Accent */
+    --accent: 179 30% 20%;
+    --accent-foreground: 179 50% 70%;
+
+    /* Destructive — lighter red for dark mode */
+    --destructive: 10 80% 58%;
+    --destructive-foreground: 0 0% 100%;
+
+    /* Card */
+    --card: 0 0% 14%;
+    --card-foreground: 240 3% 97%;
+
+    /* Popover */
+    --popover: 0 0% 14%;
+    --popover-foreground: 240 3% 97%;
+
+    /* Borders */
+    --border: 0 0% 25%;
+    --input: 0 0% 25%;
+
+    --ring: 162 68% 44%;
+    --radius: 0.5rem;
+
+    /* State colors dark */
+    --success: 162 68% 44%;
+    --success-foreground: 0 0% 100%;
+    --warning: 40 90% 60%;
+    --warning-foreground: 0 0% 8%;
+    --info: 215 80% 60%;
+    --info-foreground: 0 0% 100%;
+
+    --chart-1: 162 68% 44%;
+    --chart-2: 227 60% 68%;
+    --chart-3: 179 50% 60%;
+    --chart-4: 10 80% 58%;
+    --chart-5: 40 90% 60%;
+
+    --sidebar: 0 0% 8%;
+    --sidebar-foreground: 240 3% 97%;
+    --sidebar-primary: 162 68% 44%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 179 30% 20%;
+    --sidebar-accent-foreground: 179 50% 70%;
+    --sidebar-border: 0 0% 25%;
+    --sidebar-ring: 162 68% 44%;
+  }
+}
+
+@layer base {
+  * {
+    border-color: hsl(var(--border));
+  }
+  body {
+    background-color: hsl(var(--background));
+    color: hsl(var(--foreground));
+    font-family: "Inter", -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* Polaris uses offset focus rings for better visibility */
+  :focus-visible {
+    outline: 2px solid hsl(var(--ring));
+    outline-offset: 2px;
+    border-radius: var(--radius, 0.5rem);
+  }
+}

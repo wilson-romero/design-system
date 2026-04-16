@@ -1,0 +1,48 @@
+{
+  "name": "@wilson-romero/polaris",
+  "version": "1.0.0",
+  "description": "Shopify Polaris Design System — tokens + React components for Next.js",
+  "type": "module",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    },
+    "./styles": "./dist/styles/globals.css",
+    "./tailwind": "./tailwind.config.ts"
+  },
+  "license": "MIT",
+  "keywords": ["design-system", "polaris", "shopify", "react", "tailwindcss", "components"],
+  "publishConfig": {
+    "access": "public"
+  },
+  "files": [
+    "dist",
+    "tailwind.config.ts",
+    "README.md"
+  ],
+  "scripts": {
+    "build": "tsup && mkdir -p dist/styles && cp src/styles/globals.css dist/styles/globals.css",
+    "build:watch": "tsup --watch",
+    "type-check": "tsc --noEmit"
+  },
+  "peerDependencies": {
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "next": ">=16.0.0",
+    "tailwindcss": "^4.0.0"
+  },
+  "dependencies": {
+    "@wilson-romero/tigo": "workspace:*"
+  },
+  "devDependencies": {
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "tsup": "^8",
+    "typescript": "^5"
+  }
+}

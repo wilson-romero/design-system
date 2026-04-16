@@ -1,0 +1,165 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:is(.dark *));
+
+/**
+ * Spectrum Design System — Adobe
+ *
+ * Token reference: spectrum.adobe.com/page/color
+ *
+ * Core palette:
+ *   Blue 600       #0265DC  — Static Blue / Primary
+ *   Gray 800       #222222  — Static White → Text
+ *   Red 600        #D7373F  — Negative / Brand red
+ *   Green 600      #268E6C  — Positive / Success
+ *   Orange 700     #E68619  — Notice / Warning
+ *
+ * Color format: HSL
+ *   Blue 600  → hsl(213 98% 44%)
+ *   Red 600   → hsl(357 62% 52%)
+ *   Green 600 → hsl(160 58% 36%)
+ *   Orange 700 → hsl(33 79% 50%)
+ *
+ * Key principle: creative experiences, multi-platform, robust tokens, A11y.
+ */
+
+@layer base {
+  :root {
+    /* Background & Foreground */
+    --background: 0 0% 100%;
+    --foreground: 0 0% 13%;            /* #222222 */
+
+    /* Primary — Blue 600 #0265DC */
+    --primary: 213 98% 44%;
+    --primary-foreground: 0 0% 100%;
+    --primary-hover: 213 98% 36%;      /* Blue 700 */
+
+    /* Secondary — Gray 50 #F5F5F5 */
+    --secondary: 0 0% 96%;
+    --secondary-foreground: 0 0% 13%;
+    --secondary-hover: 0 0% 89%;
+
+    /* Muted */
+    --muted: 0 0% 96%;
+    --muted-foreground: 0 0% 40%;
+
+    /* Accent — Blue 100 tint */
+    --accent: 213 100% 94%;
+    --accent-foreground: 213 98% 30%;
+
+    /* Destructive — Red 600 #D7373F */
+    --destructive: 357 62% 52%;
+    --destructive-foreground: 0 0% 100%;
+
+    /* Card */
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 13%;
+
+    /* Popover */
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 13%;
+
+    /* Borders — #E6E6E6 */
+    --border: 0 0% 90%;
+    --input: 0 0% 90%;
+
+    /* Focus Ring — Blue 600 */
+    --ring: 213 98% 44%;
+
+    /* Border Radius — 8px (Spectrum medium) */
+    --radius: 0.5rem;
+
+    /* State colors */
+    --success: 160 58% 36%;            /* Green 600 #268E6C */
+    --success-foreground: 0 0% 100%;
+    --warning: 33 79% 50%;             /* Orange 700 #E68619 */
+    --warning-foreground: 0 0% 100%;
+    --info: 213 98% 44%;
+    --info-foreground: 0 0% 100%;
+
+    /* Chart colors — Adobe Spectrum palette */
+    --chart-1: 213 98% 44%;            /* Blue */
+    --chart-2: 270 90% 55%;            /* Purple */
+    --chart-3: 160 58% 36%;            /* Green */
+    --chart-4: 357 62% 52%;            /* Red */
+    --chart-5: 33 79% 50%;             /* Orange */
+
+    /* Sidebar */
+    --sidebar: 0 0% 96%;
+    --sidebar-foreground: 0 0% 13%;
+    --sidebar-primary: 213 98% 44%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 213 100% 94%;
+    --sidebar-accent-foreground: 213 98% 30%;
+    --sidebar-border: 0 0% 90%;
+    --sidebar-ring: 213 98% 44%;
+  }
+
+  .dark {
+    --background: 0 0% 9%;
+    --foreground: 0 0% 90%;
+
+    --primary: 213 100% 64%;           /* Blue 400 dark */
+    --primary-foreground: 0 0% 10%;
+    --primary-hover: 213 100% 72%;
+
+    --secondary: 0 0% 16%;
+    --secondary-foreground: 0 0% 90%;
+    --secondary-hover: 0 0% 22%;
+
+    --muted: 0 0% 15%;
+    --muted-foreground: 0 0% 52%;
+
+    --accent: 213 50% 18%;
+    --accent-foreground: 213 100% 64%;
+
+    --destructive: 357 80% 62%;
+    --destructive-foreground: 0 0% 10%;
+
+    --card: 0 0% 12%;
+    --card-foreground: 0 0% 90%;
+
+    --popover: 0 0% 12%;
+    --popover-foreground: 0 0% 90%;
+
+    --border: 0 0% 22%;
+    --input: 0 0% 22%;
+
+    --ring: 213 100% 64%;
+    --radius: 0.5rem;
+
+    --success: 160 70% 50%;
+    --success-foreground: 0 0% 10%;
+    --warning: 33 100% 60%;
+    --warning-foreground: 0 0% 10%;
+    --info: 213 100% 64%;
+    --info-foreground: 0 0% 10%;
+
+    --chart-1: 213 100% 64%;
+    --chart-2: 270 90% 68%;
+    --chart-3: 160 70% 50%;
+    --chart-4: 357 80% 62%;
+    --chart-5: 33 100% 60%;
+
+    --sidebar: 0 0% 6%;
+    --sidebar-foreground: 0 0% 90%;
+    --sidebar-primary: 213 100% 64%;
+    --sidebar-primary-foreground: 0 0% 10%;
+    --sidebar-accent: 213 50% 16%;
+    --sidebar-accent-foreground: 213 100% 64%;
+    --sidebar-border: 0 0% 20%;
+    --sidebar-ring: 213 100% 64%;
+  }
+}
+
+@layer base {
+  * {
+    border-color: hsl(var(--border));
+  }
+  body {
+    background-color: hsl(var(--background));
+    color: hsl(var(--foreground));
+    font-family: "Adobe Clean", "Source Sans Pro", system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+}

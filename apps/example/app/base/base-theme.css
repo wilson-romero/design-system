@@ -1,0 +1,126 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:is(.dark *));
+
+/**
+ * Base Design System — Uber tokens override
+ * Imported only in /base route layout.
+ *
+ * Blue 400 #276EF1 · Red 400 #E11900 · Green 500 #03703C · Yellow 400 #FFC043
+ */
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 0 0% 12%;
+
+    --primary: 219 88% 55%;
+    --primary-foreground: 0 0% 100%;
+    --primary-hover: 219 88% 45%;
+
+    --secondary: 0 0% 96%;
+    --secondary-foreground: 0 0% 12%;
+    --secondary-hover: 0 0% 89%;
+
+    --muted: 0 0% 96%;
+    --muted-foreground: 0 0% 40%;
+
+    --accent: 219 100% 95%;
+    --accent-foreground: 219 88% 40%;
+
+    --destructive: 7 100% 44%;
+    --destructive-foreground: 0 0% 100%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 12%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 12%;
+
+    --border: 0 0% 89%;
+    --input: 0 0% 89%;
+    --ring: 219 88% 55%;
+
+    --radius: 0.25rem;
+
+    --success: 148 96% 23%;
+    --success-foreground: 0 0% 100%;
+    --warning: 41 100% 63%;
+    --warning-foreground: 0 0% 12%;
+    --info: 219 88% 55%;
+    --info-foreground: 0 0% 100%;
+
+    --chart-1: 219 88% 55%;
+    --chart-2: 264 85% 55%;
+    --chart-3: 148 96% 23%;
+    --chart-4: 7 100% 44%;
+    --chart-5: 41 100% 63%;
+
+    --sidebar: 0 0% 96%;
+    --sidebar-foreground: 0 0% 12%;
+    --sidebar-primary: 219 88% 55%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 219 100% 95%;
+    --sidebar-accent-foreground: 219 88% 40%;
+    --sidebar-border: 0 0% 89%;
+    --sidebar-ring: 219 88% 55%;
+  }
+}
+
+@theme inline {
+  /* UberMove is proprietary. Base Design System recommends system-ui for external projects */
+  --font-sans: system-ui, -apple-system, "Helvetica Neue", Arial, sans-serif;
+  --color-background: hsl(var(--background));
+  --color-foreground: hsl(var(--foreground));
+  --color-primary: hsl(var(--primary));
+  --color-primary-foreground: hsl(var(--primary-foreground));
+  --color-secondary: hsl(var(--secondary));
+  --color-secondary-foreground: hsl(var(--secondary-foreground));
+  --color-muted: hsl(var(--muted));
+  --color-muted-foreground: hsl(var(--muted-foreground));
+  --color-accent: hsl(var(--accent));
+  --color-accent-foreground: hsl(var(--accent-foreground));
+  --color-destructive: hsl(var(--destructive));
+  --color-destructive-foreground: hsl(var(--destructive-foreground));
+  --color-card: hsl(var(--card));
+  --color-card-foreground: hsl(var(--card-foreground));
+  --color-popover: hsl(var(--popover));
+  --color-popover-foreground: hsl(var(--popover-foreground));
+  --color-border: hsl(var(--border));
+  --color-input: hsl(var(--input));
+  --color-ring: hsl(var(--ring));
+  --color-success: hsl(var(--success));
+  --color-success-foreground: hsl(var(--success-foreground));
+  --color-warning: hsl(var(--warning));
+  --color-warning-foreground: hsl(var(--warning-foreground));
+  --color-info: hsl(var(--info));
+  --color-info-foreground: hsl(var(--info-foreground));
+  --color-chart-1: hsl(var(--chart-1));
+  --color-chart-2: hsl(var(--chart-2));
+  --color-chart-3: hsl(var(--chart-3));
+  --color-chart-4: hsl(var(--chart-4));
+  --color-chart-5: hsl(var(--chart-5));
+  --color-sidebar: hsl(var(--sidebar));
+  --color-sidebar-foreground: hsl(var(--sidebar-foreground));
+  --color-sidebar-primary: hsl(var(--sidebar-primary));
+  --color-sidebar-primary-foreground: hsl(var(--sidebar-primary-foreground));
+  --color-sidebar-accent: hsl(var(--sidebar-accent));
+  --color-sidebar-accent-foreground: hsl(var(--sidebar-accent-foreground));
+  --color-sidebar-border: hsl(var(--sidebar-border));
+  --color-sidebar-ring: hsl(var(--sidebar-ring));
+  --radius-sm: 0.125rem;
+  --radius-md: 0.25rem;
+  --radius-lg: 0.25rem;
+  --radius-xl: 0.375rem;
+}
+
+@source "../../node_modules/@wilson-romero/tigo/dist/**/*.js";
+@source "../../node_modules/@wilson-romero/base/dist/**/*.js";
+
+@layer base {
+  * { @apply border-border outline-ring/50; }
+  body {
+    @apply bg-background text-foreground;
+    font-family: system-ui, -apple-system, "Helvetica Neue", Arial, sans-serif;
+  }
+}

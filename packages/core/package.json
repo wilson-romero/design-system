@@ -1,0 +1,78 @@
+{
+  "name": "@wilson-romero/tigo",
+  "version": "1.0.0",
+  "description": "TIGO Design System — Next.js 16 + Tailwind CSS v4 + shadcn/ui",
+  "type": "module",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    },
+    "./styles": "./dist/styles/globals.css",
+    "./tailwind": "./tailwind.config.ts"
+  },
+  "license": "MIT",
+  "keywords": ["design-system", "tigo", "react", "tailwindcss", "shadcn", "components"],
+  "publishConfig": {
+    "access": "public"
+  },
+  "files": [
+    "dist",
+    "tailwind.config.ts",
+    "README.md"
+  ],
+  "scripts": {
+    "build": "tsup && mkdir -p dist/styles && cp src/styles/globals.css dist/styles/globals.css && cp src/styles/fonts.css dist/styles/fonts.css",
+    "build:watch": "tsup --watch",
+    "type-check": "tsc --noEmit",
+    "lint": "eslint src/"
+  },
+  "peerDependencies": {
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "next": ">=16.0.0",
+    "tailwindcss": "^4.0.0"
+  },
+  "dependencies": {
+    "@radix-ui/react-alert-dialog": "^1.1.15",
+    "@radix-ui/react-avatar": "^1.1.11",
+    "@radix-ui/react-checkbox": "^1.3.3",
+    "@radix-ui/react-collapsible": "^1.1.12",
+    "@radix-ui/react-dialog": "^1.1.15",
+    "@radix-ui/react-dropdown-menu": "^2.1.16",
+    "@radix-ui/react-label": "^2.1.8",
+    "@radix-ui/react-popover": "^1.1.15",
+    "@radix-ui/react-progress": "^1.1.8",
+    "@radix-ui/react-radio-group": "^1.3.8",
+    "@radix-ui/react-select": "^2.2.6",
+    "@radix-ui/react-separator": "^1.1.8",
+    "@radix-ui/react-slot": "^1.2.4",
+    "@radix-ui/react-switch": "^1.2.6",
+    "@radix-ui/react-tabs": "^1.1.13",
+    "@radix-ui/react-toggle": "^1.1.10",
+    "@radix-ui/react-tooltip": "^1.2.8",
+    "@tanstack/react-table": "^8.21.3",
+    "class-variance-authority": "^0.7.1",
+    "clsx": "^2.1.1",
+    "cmdk": "^1.1.1",
+    "date-fns": "^4.1.0",
+    "input-otp": "^1.4.2",
+    "lucide-react": "^0.469.0",
+    "next-themes": "^0.4.6",
+    "react-day-picker": "^9.11.1",
+    "sonner": "^2.0.7",
+    "tailwind-merge": "^3.4.0",
+    "use-debounce": "^10.0.6"
+  },
+  "devDependencies": {
+    "@types/node": "^22",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "tsup": "^8",
+    "typescript": "^5"
+  }
+}
