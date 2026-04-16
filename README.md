@@ -2,23 +2,39 @@
 
 9 enterprise design systems implemented as swappable React component libraries — all sharing the same shadcn/ui component API with different visual tokens (colors, typography, border radius).
 
+Published on [GitHub Packages](https://github.com/wilson-romero?tab=packages).
+
 ## Packages
 
-| Package | Design System | Primary Color | npm |
-|---------|--------------|---------------|-----|
-| `@wilson-romero/tigo` | TIGO | `#5060BA` | [![npm](https://img.shields.io/npm/v/@wilson-romero/tigo)](https://www.npmjs.com/package/@wilson-romero/tigo) |
-| `@wilson-romero/carbon` | IBM Carbon | `#0f62fe` | [![npm](https://img.shields.io/npm/v/@wilson-romero/carbon)](https://www.npmjs.com/package/@wilson-romero/carbon) |
-| `@wilson-romero/polaris` | Shopify Polaris | `#008060` | [![npm](https://img.shields.io/npm/v/@wilson-romero/polaris)](https://www.npmjs.com/package/@wilson-romero/polaris) |
-| `@wilson-romero/base` | Uber Base | `#276EF1` | [![npm](https://img.shields.io/npm/v/@wilson-romero/base)](https://www.npmjs.com/package/@wilson-romero/base) |
-| `@wilson-romero/lightning` | Salesforce Lightning | `#0176D3` | [![npm](https://img.shields.io/npm/v/@wilson-romero/lightning)](https://www.npmjs.com/package/@wilson-romero/lightning) |
-| `@wilson-romero/pajamas` | GitLab Pajamas | `#6B4FBB` | [![npm](https://img.shields.io/npm/v/@wilson-romero/pajamas)](https://www.npmjs.com/package/@wilson-romero/pajamas) |
-| `@wilson-romero/primer` | GitHub Primer | `#0969DA` | [![npm](https://img.shields.io/npm/v/@wilson-romero/primer)](https://www.npmjs.com/package/@wilson-romero/primer) |
-| `@wilson-romero/spectrum` | Adobe Spectrum | `#0265DC` | [![npm](https://img.shields.io/npm/v/@wilson-romero/spectrum)](https://www.npmjs.com/package/@wilson-romero/spectrum) |
-| `@wilson-romero/antd` | Ant Design | `#1677FF` | [![npm](https://img.shields.io/npm/v/@wilson-romero/antd)](https://www.npmjs.com/package/@wilson-romero/antd) |
+| Package | Design System | Primary Color |
+|---------|--------------|---------------|
+| `@wilson-romero/tigo` | TIGO | `#5060BA` |
+| `@wilson-romero/carbon` | IBM Carbon | `#0f62fe` |
+| `@wilson-romero/polaris` | Shopify Polaris | `#008060` |
+| `@wilson-romero/base` | Uber Base | `#276EF1` |
+| `@wilson-romero/lightning` | Salesforce Lightning | `#0176D3` |
+| `@wilson-romero/pajamas` | GitLab Pajamas | `#6B4FBB` |
+| `@wilson-romero/primer` | GitHub Primer | `#0969DA` |
+| `@wilson-romero/spectrum` | Adobe Spectrum | `#0265DC` |
+| `@wilson-romero/antd` | Ant Design | `#1677FF` |
 
 ## Quick Start
 
-### Install
+### Step 1 — Configure the GitHub Packages registry
+
+Packages are hosted on GitHub Packages, not the public npm registry. You need a [GitHub Personal Access Token](https://github.com/settings/tokens) with the `read:packages` scope.
+
+Add a `.npmrc` file at the root of your project:
+
+```
+@wilson-romero:registry=https://npm.pkg.github.com
+//npm.pkg.github.com/:_authToken=YOUR_GITHUB_TOKEN
+```
+
+> You can also set the token as an environment variable and reference it:
+> `//npm.pkg.github.com/:_authToken=${GITHUB_TOKEN}`
+
+### Step 2 — Install
 
 ```bash
 # Pick one — they all expose the same component API
@@ -33,7 +49,7 @@ npm install @wilson-romero/spectrum    # Adobe Spectrum
 npm install @wilson-romero/antd        # Ant Design
 ```
 
-### Setup in Next.js (example with TIGO)
+### Step 3 — Setup in Next.js (example with TIGO)
 
 **`tailwind.config.ts`**
 ```ts
@@ -66,7 +82,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 
 **`app/page.tsx`**
 ```tsx
-import { Button, Input, Card, CardContent, DataTable } from "@wilson-romero/tigo"
+import { Button, Input, Card, CardContent } from "@wilson-romero/tigo"
 
 export default function Page() {
   return (
@@ -82,7 +98,7 @@ export default function Page() {
 
 ### Switch design systems
 
-Swap one line to change the entire visual language of your app — all components stay identical:
+Swap two lines to change the entire visual language — all components stay identical:
 
 ```diff
 - import "@wilson-romero/tigo/styles"
@@ -133,10 +149,13 @@ pnpm build:carbon
 
 ## Publishing
 
+Packages are published automatically to GitHub Packages when a version tag is pushed:
+
 ```bash
-# Publish all packages to npm
-pnpm publish:all
+git tag v1.2.0 && git push origin v1.2.0
 ```
+
+The GitHub Actions workflow (`.github/workflows/publish.yml`) handles build + publish.
 
 ## Tech Stack
 

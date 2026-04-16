@@ -7,6 +7,17 @@ Typography: Salesforce Sans · Subtle corners (0.125rem–0.375rem radius).
 
 ## Installation
 
+### 1. Configure the GitHub Packages registry
+
+Add a `.npmrc` file at the root of your project with a [GitHub token](https://github.com/settings/tokens) (scope: `read:packages`):
+
+```
+@wilson-romero:registry=https://npm.pkg.github.com
+//npm.pkg.github.com/:_authToken=YOUR_GITHUB_TOKEN
+```
+
+### 2. Install the package
+
 ```bash
 npm install @wilson-romero/lightning
 # or

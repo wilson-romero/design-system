@@ -6,6 +6,17 @@ Built on [shadcn/ui](https://ui.shadcn.com/) with TIGO brand colors: Azul `#5060
 
 ## Installation
 
+### 1. Configure the GitHub Packages registry
+
+Add a `.npmrc` file at the root of your project with a [GitHub token](https://github.com/settings/tokens) (scope: `read:packages`):
+
+```
+@wilson-romero:registry=https://npm.pkg.github.com
+//npm.pkg.github.com/:_authToken=YOUR_GITHUB_TOKEN
+```
+
+### 2. Install the package
+
 ```bash
 npm install @wilson-romero/tigo
 # or
@@ -14,7 +25,7 @@ pnpm add @wilson-romero/tigo
 
 ## Setup in Next.js
 
-### 1. Tailwind preset — `tailwind.config.ts`
+### 3. Tailwind preset — `tailwind.config.ts`
 
 ```ts
 import tigoPreset from "@wilson-romero/tigo/tailwind"
@@ -31,7 +42,7 @@ const config: Config = {
 export default config
 ```
 
-### 2. Global styles — `app/layout.tsx`
+### 4. Global styles — `app/layout.tsx`
 
 ```tsx
 import "@wilson-romero/tigo/styles"
@@ -45,7 +56,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 }
 ```
 
-### 3. Use components
+### 5. Use components
 
 ```tsx
 import { Button, Input, Card, CardContent, Badge } from "@wilson-romero/tigo"
