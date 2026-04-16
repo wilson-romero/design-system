@@ -1,6 +1,6 @@
 {
   "name": "@wilson-romero/primer",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "GitHub Primer Design System — tokens + React components for Next.js",
   "type": "module",
   "main": "./dist/index.cjs",
@@ -16,7 +16,14 @@
     "./tailwind": "./tailwind.config.ts"
   },
   "license": "MIT",
-  "keywords": ["design-system", "primer", "github", "react", "tailwindcss", "components"],
+  "keywords": [
+    "design-system",
+    "primer",
+    "github",
+    "react",
+    "tailwindcss",
+    "components"
+  ],
   "publishConfig": {
     "access": "public"
   },

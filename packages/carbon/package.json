@@ -1,6 +1,6 @@
 {
   "name": "@wilson-romero/carbon",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "IBM Carbon Design System — tokens + React components for Next.js",
   "type": "module",
   "main": "./dist/index.cjs",
@@ -16,7 +16,14 @@
     "./tailwind": "./tailwind.config.ts"
   },
   "license": "MIT",
-  "keywords": ["design-system", "carbon", "ibm", "react", "tailwindcss", "components"],
+  "keywords": [
+    "design-system",
+    "carbon",
+    "ibm",
+    "react",
+    "tailwindcss",
+    "components"
+  ],
   "publishConfig": {
     "access": "public"
   },
