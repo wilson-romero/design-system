@@ -2,7 +2,7 @@
 
 9 enterprise design systems implemented as swappable React component libraries — all sharing the same shadcn/ui component API with different visual tokens (colors, typography, border radius).
 
-Published on [GitHub Packages](https://github.com/wilson-romero?tab=packages).
+Published on [npm](https://www.npmjs.com/~wilson-romero).
 
 ## Packages
 
@@ -20,21 +20,7 @@ Published on [GitHub Packages](https://github.com/wilson-romero?tab=packages).
 
 ## Quick Start
 
-### Step 1 — Configure the GitHub Packages registry
-
-Packages are hosted on GitHub Packages, not the public npm registry. You need a [GitHub Personal Access Token](https://github.com/settings/tokens) with the `read:packages` scope.
-
-Add a `.npmrc` file at the root of your project:
-
-```
-@wilson-romero:registry=https://npm.pkg.github.com
-//npm.pkg.github.com/:_authToken=YOUR_GITHUB_TOKEN
-```
-
-> You can also set the token as an environment variable and reference it:
-> `//npm.pkg.github.com/:_authToken=${GITHUB_TOKEN}`
-
-### Step 2 — Install
+### Step 1 — Install
 
 ```bash
 # Pick one — they all expose the same component API
@@ -49,7 +35,7 @@ npm install @wilson-romero/spectrum    # Adobe Spectrum
 npm install @wilson-romero/antd        # Ant Design
 ```
 
-### Step 3 — Setup in Next.js (example with TIGO)
+### Step 2 — Setup in Next.js (example with TIGO)
 
 **`tailwind.config.ts`**
 ```ts
@@ -149,7 +135,7 @@ pnpm build:carbon
 
 ## Publishing
 
-Packages are published automatically to GitHub Packages when a version tag is pushed:
+Packages are published automatically to npm when a version tag is pushed (requires `NPM_TOKEN` secret in the repo settings):
 
 ```bash
 git tag v1.2.0 && git push origin v1.2.0

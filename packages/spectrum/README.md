@@ -7,16 +7,7 @@ Typography: Adobe Clean · Rounded corners (0.25rem–0.75rem radius).
 
 ## Installation
 
-### 1. Configure the GitHub Packages registry
-
-Add a `.npmrc` file at the root of your project with a [GitHub token](https://github.com/settings/tokens) (scope: `read:packages`):
-
-```
-@wilson-romero:registry=https://npm.pkg.github.com
-//npm.pkg.github.com/:_authToken=YOUR_GITHUB_TOKEN
-```
-
-### 2. Install the package
+### Install
 
 ```bash
 npm install @wilson-romero/spectrum
