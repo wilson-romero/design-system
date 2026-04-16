@@ -1,6 +1,6 @@
 {
   "name": "@wilson-romero/tigo",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "description": "TIGO Design System — Next.js 16 + Tailwind CSS v4 + shadcn/ui",
   "type": "module",
   "main": "./dist/index.cjs",
@@ -16,7 +16,14 @@
     "./tailwind": "./tailwind.config.ts"
   },
   "license": "MIT",
-  "keywords": ["design-system", "tigo", "react", "tailwindcss", "shadcn", "components"],
+  "keywords": [
+    "design-system",
+    "tigo",
+    "react",
+    "tailwindcss",
+    "shadcn",
+    "components"
+  ],
   "publishConfig": {
     "access": "public"
   },
@@ -26,7 +33,7 @@
     "README.md"
   ],
   "scripts": {
-    "build": "tsup && mkdir -p dist/styles && cp src/styles/globals.css dist/styles/globals.css && cp src/styles/fonts.css dist/styles/fonts.css",
+    "build": "tsup && mkdir -p dist/styles && cp src/styles/*.css dist/styles/",
     "build:watch": "tsup --watch",
     "type-check": "tsc --noEmit",
     "lint": "eslint src/"
@@ -38,6 +45,7 @@
     "tailwindcss": "^4.0.0"
   },
   "dependencies": {
+    "tw-animate-css": "^1.4.0",
     "@radix-ui/react-alert-dialog": "^1.1.15",
     "@radix-ui/react-avatar": "^1.1.11",
     "@radix-ui/react-checkbox": "^1.3.3",
