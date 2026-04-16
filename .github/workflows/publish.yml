@@ -24,6 +24,9 @@ jobs:
           registry-url: "https://registry.npmjs.org"
           scope: "@wilson-romero"
 
+      - name: Configure npm auth
+        run: echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM_TOKEN }}" >> ~/.npmrc
+
       - name: Install dependencies
         run: pnpm install
 
@@ -32,5 +35,3 @@ jobs:
 
       - name: Publish all packages
         run: pnpm -r --filter './packages/**' publish --access public --no-git-checks
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
